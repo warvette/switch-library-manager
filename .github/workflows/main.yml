@@ -56,9 +56,9 @@ jobs:
           cd ../..
 
       - name: Release
-        uses: docker://antonyurchenko/git-release:latest
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          CHANGELOG_FILE: none
+        uses: ncipollo/release-action@v1
         with:
-          args: output/*/*.zip
+          artifacts: "output/*/*.zip"
+          token: ${{ secrets.GITHUB_TOKEN }}
+          draft: true
+          allowUpdates: true
