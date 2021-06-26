@@ -40,19 +40,19 @@ jobs:
       - name: Zip the MacOS release
         run: |
           cd output/darwin-amd64
-          zip -q -X -r Switch-Library-Manager-${{ env.GITHUB_REF }}-MacOS.zip Switch-Library-Manager.app/
+          zip -q -X -r Switch-Library-Manager-${GITHUB_REF}-MacOS.zip Switch-Library-Manager.app/
           cd ../..
 
       - name: Zip the Linux release
         run: |
           cd output/linux-amd64
-          zip -q -X Switch-Library-Manager-${{ env.GITHUB_REF }}-Linux.zip Switch-Library-Manager
+          zip -q -X Switch-Library-Manager-${GITHUB_REF}-Linux.zip Switch-Library-Manager
           cd ../..
 
       - name: Zip the Windows release
         run: |
-          cd output/linux-amd64
-          zip -q -X Switch-Library-Manager-${{ env.GITHUB_REF }}-Windows.zip Switch-Library-Manager.exe
+          cd output/windows-amd64
+          zip -q -X Switch-Library-Manager-${GITHUB_REF}-Windows.zip Switch-Library-Manager.exe
           cd ../..
 
       - name: Release
