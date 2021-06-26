@@ -38,4 +38,4 @@ jobs:
           go install github.com/asticode/go-astilectron-bundler/astilectron-bundler
 
       - name: Bundle
-        run: ~/go/bin/astilectron-bundler
+        run: ~/go/bin/astilectron-bundler -v
